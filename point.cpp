@@ -13,11 +13,13 @@ Point::Point(float coord1, float coord2){
   ordonnee = coord2;
 }
 
+// Methode pour initialiser les coordonnees cartesiennes d'un point
 void Point::initDeCoordCartesiennes(float abs, float ord){
   abcisse = abs;
   ordonnee = ord;
 }
 
+// Methode pour initialiser les coordonnees polaires d'un point
 void Point::initDeCoordPolaires(float rayon, float angle_degres){
   //Conversion de l'angle en radians
   float angle_radians = angle_degres*PI/180;
@@ -31,21 +33,21 @@ void Point::initDeCoordPolaires(float rayon, float angle_degres){
   else
     ordonnee = rayon * sin(angle_radians);
 }
-
+//methode d'acces individuelles
 float Point::calculerAbcisse(){
   return abcisse;
 }  
-
+//methode d'acces individuelles
 float Point::calculerOrdonnee(){
   return ordonnee;
 }  
-
+//Calcul du rayon
 float Point::calculerRayon(){
   //Calcul du rayon en fonction des coordonnees cartesiennes
   float rayon = sqrt(pow(abcisse,2) + pow(ordonnee,2));
   return rayon;
 }
-
+//Calcul de l'angle
 float Point::calculerAngle(){
   //Calcul de l'angle en fonction des coordonnees cartesiennes
   float angle = 0.0;
